@@ -2,5 +2,5 @@ package ch.hevs.managedbeans;
 
 public class ArtistBean
 {
-	//sucepute
+	//test
 }
