@@ -23,7 +23,7 @@ public class ArtistBean
     	
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
-		beanify = (Beanify) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank");
+		beanify = (Beanify) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank");
 			
     	// get clients
 		List<Artist> artists = beanify.getArtists();
