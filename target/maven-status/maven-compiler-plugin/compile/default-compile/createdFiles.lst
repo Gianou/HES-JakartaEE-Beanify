@@ -1,0 +1,6 @@
+ch\hevs\bankservice\Bank.class
+ch\hevs\businessobject\Client.class
+ch\hevs\exception\BankException.class
+ch\hevs\managedbeans\TransferBean.class
+ch\hevs\bankservice\BankBean.class
+ch\hevs\businessobject\Account.class
