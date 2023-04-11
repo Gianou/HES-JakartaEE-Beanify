@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
-  <title><ui:insert name="title">Default title</ui:insert></title>
+  <title><ui:insert name="title">Beanify</ui:insert></title>
 </head>
 
 <body>
@@ -16,7 +16,12 @@
 </div>
 
 
-<div id="content">
+<div id="content" 
+	style="display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column"
+	>
   <ui:insert name="content">
     	<ui:include src="content.xhtml"/>  
   </ui:insert>

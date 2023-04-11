@@ -8,13 +8,22 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
-    	<h:form>
-        	<h:outputLabel value="Artists:"></h:outputLabel>
-	        	<h:selectOneMenu value="#{artistBean.sourceClientName}" valueChangeListener="#{artistBean.updateSourceAccounts}" onchange="submit()">
+    	<h:form 
+    		style="display: flex;
+    		flex-direction:column;
+        	align-items: center;
+        	justify-content: center;
+        	">
+        	
+        	<h:outputLabel value="Artists:" 
+        		style="margin:4vw;"><br></br></h:outputLabel>
+	        	<h:selectOneMenu value="#{artistBean.sourceClientName}" valueChangeListener="#{artistBean.updateSourceAccounts}" onchange="submit()" 
+	        		style="margin:4vw;">
 	        		<f:selectItems value="#{artistBean.artistNames}"/>
 	        	</h:selectOneMenu>
         	
-     		<h:commandButton value="Show Discography!" action="#{transferBean.performTransfer}"></h:commandButton>
+     		<h:commandButton value="Show Discography!" action="#{transferBean.performTransfer}" 
+     			style="margin:4vw;"></h:commandButton>
         </h:form>
     </ui:define>
 </ui:composition>
