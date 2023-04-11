@@ -12,20 +12,24 @@
         	<h:outputLabel value="Artist Information:"></h:outputLabel>
         	<br></br>
         	<h:panelGrid columns="5">
-        		<h:outputText value="album: "></h:outputText>
+        	
+        		<h:outputText value="Artist: "></h:outputText>
         		<h:outputText value="songs: "></h:outputText>
 	        	<h:selectOneMenu value="#{transferBean.sourceClientName}" valueChangeListener="#{transferBean.updateSourceAccounts}" onchange="submit()">
 	        		<f:selectItems value="#{transferBean.clientNames}"/>
 	        	</h:selectOneMenu>
+	        	
 	        	<h:outputText value="account: "></h:outputText>
 	        	<h:selectOneMenu value="#{transferBean.sourceAccountDescription}">
 	        		<f:selectItems value="#{transferBean.sourceAccountDescriptions}"/>
 	        	</h:selectOneMenu>
+	        	
 	        	<h:outputText value="destination: "></h:outputText>
         		<h:outputText value="client: "></h:outputText>
 	        	<h:selectOneMenu value="#{transferBean.destinationClientName}" valueChangeListener="#{transferBean.updateDestinationAccounts}" onchange="submit()">
 	        		<f:selectItems value="#{transferBean.clientNames}"/>
 	        	</h:selectOneMenu>
+	        	
 	        	<h:outputText value="account: "></h:outputText>
 	        	<h:selectOneMenu value="#{transferBean.destinationAccountDescription}">
 	        		<f:selectItems value="#{transferBean.destinationAccountDescriptions}"/>
