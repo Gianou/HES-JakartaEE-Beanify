@@ -22,4 +22,24 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#showTransferResult.xhtml"
   PATH="/showTransferResult.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#welcomeBeanify.xhtml"
+  PATH="/welcomeBeanify.xhtml" SHAPE="152,160,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#welcomeBeanify.xhtml:0" NAME="item"
+   PATH="/welcomeBeanify.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="showArtists::#showArtists.xhtml"
+    NAME="output" PATH="/showArtists.xhtml"
+    TARGET="rules:#showArtists.xhtml" TITLE="showArtists" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#showArtists.xhtml" PATH="/showArtists.xhtml"
+  SHAPE="496,160,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#showArtists.xhtml:0" NAME="item"
+   PATH="/showArtists.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="showAlbums::#showAlbums.xhtml" NAME="output"
+    PATH="/showAlbums.xhtml" TARGET="rules:#showAlbums.xhtml"
+    TITLE="showAlbums" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#showAlbums.xhtml" PATH="/showAlbums.xhtml"
+  SHAPE="816,168,50,25" model-entity="JSFProcessGroup" persistent="true"/>
 </PROCESS>
