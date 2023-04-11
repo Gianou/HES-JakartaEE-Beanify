@@ -1,7 +1,8 @@
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\managedbeans\ArtistBean.java
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\bankservice\Bank.java
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\bankservice\BankBean.java
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\exception\BankException.java
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\businessobject\Account.java
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\managedbeans\TransferBean.java
-C:\Users\Maintenant prêt\Documents\Code Eclipse\rootJakartaEE\Labs\HES-JakartaEE-Beanify\src\main\java\ch\hevs\businessobject\Client.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\businessobject\Subscriber.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\beanifyservice\Beanify.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\businessobject\Person.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\businessobject\Album.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\businessobject\Song.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\managedbeans\ArtistBean.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\beanifyservice\BeanifyBean.java
+D:\HES\604\63-41 Implementing services\rootJakartaEE\Labs\BeanifyProject\src\main\java\ch\hevs\businessobject\Artist.java
