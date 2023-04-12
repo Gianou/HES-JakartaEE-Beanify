@@ -10,14 +10,13 @@ import org.junit.Test;
 import ch.hevs.businessobject.Song;
 
 public class PersistanceTest {
-/*
+
 	@Test
 	public void test() {
 		
 		EntityTransaction tx = null;
 		try {
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("BeanifyPU");
-			
 			EntityManager em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
@@ -39,5 +38,5 @@ public class PersistanceTest {
 		}
 		
 	}
-	*/
+	
 }

@@ -10,7 +10,7 @@ import org.junit.Test;
 import ch.hevs.businessobject.Song;
 
 public class PersistenceTest {
-/*
+
 	@Test
 	public void test() {
 		EntityTransaction tx = null;
@@ -38,6 +38,5 @@ public class PersistenceTest {
 		}
 
 	}
-	*/
 
 }
