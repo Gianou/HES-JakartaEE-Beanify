@@ -18,15 +18,15 @@ public class PersistanceTest {
 		try {
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("BeanifyPU");
 			
-			//EntityManager em = emf.createEntityManager();
-			//tx = em.getTransaction();
-			//tx.begin();
-			//Song s = new Song();
-			//s.setSongTitle("sucepute");
-			//s.setUrl("URL");
+			EntityManager em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			Song s = new Song();
+			s.setSongTitle("sucepute");
+			s.setUrl("URL");
 			
-			//em.persist(s);
-			//tx.commit();
+			em.persist(s);
+			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {
@@ -39,4 +39,5 @@ public class PersistanceTest {
 		}
 		
 	}
+	
 }

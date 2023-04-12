@@ -7,23 +7,24 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import ch.hevs.businessobject.Client;
+import ch.hevs.businessobject.Song;
 
 public class PersistenceTest {
-/*
+
 	@Test
 	public void test() {
 		EntityTransaction tx = null;
 		try {
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("bankPU");
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("BeanifyPU");
+			
 			EntityManager em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			Client c = new Client();
-			c.setLastname("Boli");
-			c.setFirstname("Basile");
-			c.setDescription("Good client");
-			em.persist(c);
+			Song s = new Song();
+			s.setSongTitle("sucepute");
+			s.setUrl("URL");
+			
+			em.persist(s);
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -37,6 +38,6 @@ public class PersistenceTest {
 		}
 
 	}
-	*/
+	
 
 }
