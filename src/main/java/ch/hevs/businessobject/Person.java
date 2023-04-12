@@ -15,12 +15,14 @@ public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	protected long id;
+	
 	@Column(name="firstName")
 	private String firstName;
+	
 	@Column(name="lastName")
 	private String lastName;
 	
-	
+	// GETTER SETTER
 	public long getId() {
 		return id;
 	}
@@ -39,6 +41,8 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	//CONSTRUCTOR
 	public Person(long id, String firstName, String lastName) {
 		this.id = id;
 		this.firstName = firstName;
