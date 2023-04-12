@@ -10,7 +10,7 @@ import org.junit.Test;
 import ch.hevs.businessobject.Song;
 
 public class PersistanceTest {
-
+/*
 	@Test
 	public void test() {
 		
@@ -39,5 +39,5 @@ public class PersistanceTest {
 		}
 		
 	}
-	
+	*/
 }

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ch.hevs.test.PersistanceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.162 sec <<< FAILURE!
-test(ch.hevs.test.PersistanceTest)  Time elapsed: 0.134 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.163 sec <<< FAILURE!
+test(ch.hevs.test.PersistanceTest)  Time elapsed: 0.133 sec  <<< ERROR!
 java.lang.NoSuchMethodError: org.jboss.logging.Logger.tracef(Ljava/lang/String;Ljava/lang/Object;)V
 	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:49)
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
