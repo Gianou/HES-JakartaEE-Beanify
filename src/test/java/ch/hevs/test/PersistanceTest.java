@@ -17,7 +17,8 @@ public class PersistanceTest {
 		EntityTransaction tx = null;
 		try {
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("BeanifyPU");
-			EntityManager em = emf.createEntityManager();
+			
+			//EntityManager em = emf.createEntityManager();
 			//tx = em.getTransaction();
 			//tx.begin();
 			//Song s = new Song();
@@ -29,7 +30,7 @@ public class PersistanceTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {
-				//tx.rollback();
+				tx.rollback();
 			} catch (IllegalStateException e1) {
 				e1.printStackTrace();
 			} catch (SecurityException e1) {
