@@ -10,6 +10,6 @@ import ch.hevs.businessobject.Artist;
 public interface Beanify {
 
 	Artist getArtist(String artistName);
-	public List<Artist> getArtists();
+	List<Artist> getArtists();
 	
 }

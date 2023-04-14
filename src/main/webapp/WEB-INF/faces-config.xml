@@ -24,5 +24,5 @@
    <to-view-id>/showAlbums.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
- <application/>
+ 
 </faces-config>
