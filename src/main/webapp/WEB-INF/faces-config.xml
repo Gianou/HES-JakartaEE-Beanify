@@ -2,18 +2,22 @@
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <managed-bean>
-  <managed-bean-name>ArtistBean</managed-bean-name>
+  <managed-bean-name>artistBean</managed-bean-name>
   <managed-bean-class>ch.hevs.managedbeans.ArtistBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
+ 
  <navigation-rule>
+ <display-name>welcomeBeanify.xhtml</display-name>
   <from-view-id>/welcomeBeanify.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>showArtists</from-outcome>
    <to-view-id>/showArtists.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
+ 
  <navigation-rule>
+  <display-name>showArtists.xhtml</display-name>
   <from-view-id>/showArtists.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>showAlbums</from-outcome>

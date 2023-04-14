@@ -15,14 +15,14 @@
         	justify-content: center;
         	">
         	
-        	<h:outputLabel value="Artists" 
+        	<h:outputLabel value="Artists 3" 
         		style="margin:4vw;"><br></br></h:outputLabel>
-	        	<h:selectOneMenu value="#{artistBean.sourceClientName}" valueChangeListener="#{artistBean.updateSourceAccounts}" onchange="submit()" 
+	        	<h:selectOneMenu  onchange="submit()" 
 	        		style="margin:4vw;">
-	        		<f:selectItems value="#{artistBean.artistNames}"/>
+	        		<f:selectItems value="#{artistBean.test}"/>
 	        	</h:selectOneMenu>
         	
-     		<h:commandButton value="Show Discography!" action="#{transferBean.performTransfer}" 
+     		<h:commandButton value="Show Discography!"  
      			style="margin:4vw;"></h:commandButton>
         </h:form>
     </ui:define>

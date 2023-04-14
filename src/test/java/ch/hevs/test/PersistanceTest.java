@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
+import ch.hevs.businessobject.Artist;
 import ch.hevs.businessobject.Song;
 
 public class PersistanceTest {
@@ -24,7 +25,11 @@ public class PersistanceTest {
 			s.setSongTitle("sucepute");
 			s.setUrl("URL");
 			
+			Artist a = new Artist();
+			a.setArtistName("Perturbator");
+			
 			em.persist(s);
+			em.persist(a);
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
