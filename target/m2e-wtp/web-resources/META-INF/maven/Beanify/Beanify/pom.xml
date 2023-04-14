@@ -1,3 +1,5 @@
+<!-- Pom de nos test qui marche pas -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Beanify</groupId>
@@ -21,12 +23,12 @@
       <artifactId>hsqldb</artifactId>
       <version>1.8.0.10</version>
     </dependency>
-    <dependency>
+    <!--dependency>
       <groupId>jboss</groupId>
       <artifactId>jboss-common</artifactId>
       <version>3.2.3</version>
       <scope>provided</scope>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>jboss</groupId>
       <artifactId>jboss-jmx</artifactId>
@@ -116,7 +118,7 @@
  	<dependency>
      <groupId>org.hibernate</groupId>
     	<artifactId>hibernate-entitymanager</artifactId>
-    	<version>5.2.6.Final</version>
+    	<version>4.3.7.Final</version>
     	<scope>provided</scope>
 	</dependency>
 	<dependency>

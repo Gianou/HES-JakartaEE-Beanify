@@ -1,11 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: ch.hevs.test.PersistanceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.163 sec <<< FAILURE!
-test(ch.hevs.test.PersistanceTest)  Time elapsed: 0.133 sec  <<< ERROR!
-java.lang.NoSuchMethodError: org.jboss.logging.Logger.tracef(Ljava/lang/String;Ljava/lang/Object;)V
-	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:49)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.025 sec <<< FAILURE!
+test(ch.hevs.test.PersistanceTest)  Time elapsed: 0.019 sec  <<< ERROR!
+java.lang.NoSuchMethodError: org.jboss.logging.Logger.getMessageLogger(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+	at org.hibernate.jpa.internal.HEMLogging.messageLogger(HEMLogging.java:45)
+	at org.hibernate.jpa.internal.HEMLogging.messageLogger(HEMLogging.java:41)
+	at org.hibernate.ejb.HibernatePersistence.<clinit>(HibernatePersistence.java:46)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/java.lang.Class.newInstance(Class.java:584)
+	at javax.persistence.spi.PersistenceProviderResolverHolder$DefaultPersistenceProviderResolver.getPersistenceProviders(PersistenceProviderResolverHolder.java:117)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:76)
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at ch.hevs.test.PersistanceTest.test(PersistanceTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

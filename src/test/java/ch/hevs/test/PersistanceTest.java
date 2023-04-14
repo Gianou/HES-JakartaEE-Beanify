@@ -28,6 +28,7 @@ public class PersistanceTest {
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
+			/*
 			try {
 				tx.rollback();
 			} catch (IllegalStateException e1) {
@@ -35,6 +36,7 @@ public class PersistanceTest {
 			} catch (SecurityException e1) {
 				e1.printStackTrace();
 			}
+			*/
 		}
 		
 	}
