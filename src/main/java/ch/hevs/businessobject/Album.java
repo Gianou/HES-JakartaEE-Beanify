@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -25,8 +26,8 @@ public class Album {
 	@Column(name="album")
 	private String albumTitle;
 	
-	@Column(name="prenom")
-	private Date releaseDate;
+	@Column(name="date")
+	private String releaseDate;
 	
 	@ManyToOne
 	private Artist artist;
@@ -52,11 +53,11 @@ public class Album {
 		this.albumTitle = albumTitle;
 	}
 
-	public Date getReleaseDate() {
+	public String getReleaseDate() {
 		return releaseDate;
 	}
 
-	public void setReleaseDate(Date releaseDate) {
+	public void setReleaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 

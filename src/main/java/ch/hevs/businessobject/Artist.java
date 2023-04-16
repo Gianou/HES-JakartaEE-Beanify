@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Table(name="Artist")
 public class Artist extends Person {
 
-	@Column(name="artistName")
+	@Column(name="artistName", unique=true)
 	private String artistName;
 	
 	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL)
@@ -51,6 +51,11 @@ public class Artist extends Person {
 
 	public void setSongs(Set<Song> songs) {
 		this.songs = songs;
+	}
+	
+	public void addAlbum(Album album) {
+		albums.add(album);
+		album.setArtist(this);
 	}
 	
 	// CONSTRUCTOR

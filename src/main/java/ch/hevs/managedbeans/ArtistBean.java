@@ -9,6 +9,7 @@ import javax.naming.NamingException;
 
 import ch.hevs.beanifyservice.Beanify;
 import ch.hevs.beanifyservice.BeanifyBean;
+import ch.hevs.businessobject.Album;
 import ch.hevs.businessobject.Artist;
 
 public class ArtistBean
@@ -16,7 +17,10 @@ public class ArtistBean
 	private List<Artist> artists;
 	private List<String> artistNames;
 	private Beanify beanify;
-	private String selectedArtist;
+	private String selectedArtistName;
+	private Artist selectedArtist;
+	private List<Album> selectedArtistAlbums;
+	private List<String> selectedArtistAlbumsNames;
 	
 	
 	
@@ -39,6 +43,16 @@ public class ArtistBean
     }
     
 	public String selectArtist() {
+		
+		setSelectedArtist(beanify.getArtist(selectedArtistName));
+		selectedArtistAlbums = new ArrayList<Album>();
+		
+		selectedArtistAlbums = beanify.getAlbums(selectedArtist.getId());
+		selectedArtistAlbumsNames = new ArrayList<String>();
+		for (Album album : selectedArtistAlbums) {
+			this.selectedArtistAlbumsNames.add(album.getAlbumTitle());
+		}
+		
 		return "showAlbums";
 	}
 
@@ -66,12 +80,37 @@ public class ArtistBean
 		this.beanify = beanify;
 	}
 
-	public String getSelectedArtist() {
+	public String getSelectedArtistName() {
+		return selectedArtistName;
+	}
+
+	public void setSelectedArtistName(String selectedArtistName) {
+		System.out.println("Ca change d'artiste");
+		this.selectedArtistName = selectedArtistName;
+	}
+
+	public Artist getSelectedArtist() {
 		return selectedArtist;
 	}
 
-	public void setSelectedArtist(String selectedArtist) {
+	public void setSelectedArtist(Artist selectedArtist) {
 		this.selectedArtist = selectedArtist;
+	}
+
+	public List<Album> getSelectedArtistAlbums() {
+		return selectedArtistAlbums;
+	}
+
+	public void setSelectedArtistAlbums(List<Album> selectedArtistAlbums) {
+		this.selectedArtistAlbums = selectedArtistAlbums;
+	}
+
+	public List<String> getSelectedArtistAlbumsNames() {
+		return selectedArtistAlbumsNames;
+	}
+
+	public void setSelectedArtistAlbumsNames(List<String> selectedArtistAlbumsNames) {
+		this.selectedArtistAlbumsNames = selectedArtistAlbumsNames;
 	}
 
 }
