@@ -10,11 +10,17 @@
     <ui:define name="content">
         <h:outputLabel value="Welcome to Beanify App" style="margin:4vw;"></h:outputLabel>
         <br></br>
+         <h:form>
+	        <h:commandButton value="Populate!" action="#{welcomeBean.populate}"  
+	     			style="margin:4vw;"></h:commandButton>
+     	</h:form>
+  	 
         <h:form>
         <h:commandLink action="showArtists">
          <h:outputText value="Click here to find an artist" style="margin:4vw;"/>
         </h:commandLink>
-        </h:form>
+        </h:form> 
+      
     </ui:define>
 </ui:composition>
 </html>

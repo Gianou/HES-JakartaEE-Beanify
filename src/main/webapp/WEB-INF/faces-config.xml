@@ -6,6 +6,11 @@
   <managed-bean-class>ch.hevs.managedbeans.ArtistBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
+  <managed-bean>
+  <managed-bean-name>welcomeBean</managed-bean-name>
+  <managed-bean-class>ch.hevs.managedbeans.WelcomeBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
  
  <navigation-rule>
  <display-name>welcomeBeanify.xhtml</display-name>
@@ -20,7 +25,7 @@
   <display-name>showArtists.xhtml</display-name>
   <from-view-id>/showArtists.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>showAlbums</from-outcome>
+   <from-outcome>#{ArtistBean.selectArtist}</from-outcome>
    <to-view-id>/showAlbums.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>

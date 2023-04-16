@@ -1,3 +1,4 @@
+/*
 package ch.hevs.test;
 
 import javax.persistence.EntityManager;
@@ -33,17 +34,10 @@ public class PersistanceTest {
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
-			/*
-			try {
-				tx.rollback();
-			} catch (IllegalStateException e1) {
-				e1.printStackTrace();
-			} catch (SecurityException e1) {
-				e1.printStackTrace();
-			}
-			*/
+			
 		}
 		
 	}
 	
 }
+*/

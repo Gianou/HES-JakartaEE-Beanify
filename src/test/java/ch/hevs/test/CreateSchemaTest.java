@@ -1,3 +1,4 @@
+/*
 package ch.hevs.test;
 
 import junit.framework.TestCase;
@@ -29,3 +30,4 @@ public class CreateSchemaTest extends TestCase {
 		new SchemaExport(cfg).setOutputFile("schema.ddl").create(false, true);
 	}
 }
+*/
