@@ -32,8 +32,8 @@
     	
     	<h:dataTable value = "#{artistBean.currentSubscriber.likedSongs}" var = "song">
 		   <h:column>    				
-		      <f:facet name = "header"></f:facet>                    
-              <h3>#{song.songTitle}</h3>
+		      <f:facet name = "header">Your Liked Songs</f:facet>                    
+              #{song.songTitle}
 		   </h:column>
 		</h:dataTable>
 		

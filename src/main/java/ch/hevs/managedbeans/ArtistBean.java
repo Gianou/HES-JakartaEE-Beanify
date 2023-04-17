@@ -116,6 +116,8 @@ public class ArtistBean
 	}
 
 	public String myLikedSongs() {
+		// without "reloading" the currentSubscriber via the bean, the subscriber's list of song is not updated in the entity
+		currentSubscriber = beanify.getSubscriberByEmail("name.surname@domain.com");
 		return "showLikedSongs";
 	}
 	
