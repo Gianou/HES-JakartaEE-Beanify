@@ -8,6 +8,27 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
+    	<div class="nav">
+    		
+        
+        <h:form>
+        <h:commandLink action="welcomeBeanify">
+         <h:commandButton value="Home Page" />
+        </h:commandLink>
+        </h:form> 
+        
+        <h:form>
+        <h:commandLink action="showArtists">
+         <h:commandButton value="Click here to find an artist" />
+        </h:commandLink>
+        </h:form> 
+        
+        <h:form>	
+     		<h:commandButton value="My Liked Songs" action="#{artistBean.myLikedSongs}" 
+     			></h:commandButton>
+        </h:form> 
+    	</div>
+    
         <h:outputLabel value="Welcome to Beanify App" style="margin:4vw;"></h:outputLabel>
         <br></br>
          <h:form>
@@ -15,11 +36,7 @@
 	     			style="margin:4vw;"></h:commandButton>
      	</h:form>
   	 
-        <h:form>
-        <h:commandLink action="showArtists">
-         <h:outputText value="Click here to find an artist" style="margin:4vw;"/>
-        </h:commandLink>
-        </h:form> 
+        
       
     </ui:define>
 </ui:composition>

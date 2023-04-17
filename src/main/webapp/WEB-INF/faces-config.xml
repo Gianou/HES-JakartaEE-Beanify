@@ -22,11 +22,66 @@
  </navigation-rule>
  
  <navigation-rule>
+ <display-name>showArtists</display-name>
+  <from-view-id>/showArtists.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>welcomeBeanify.xhtml</from-outcome>
+   <to-view-id>/welcomeBeanify.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+ <display-name>showAlbums</display-name>
+  <from-view-id>/showAlbums.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>welcomeBeanify.xhtml</from-outcome>
+   <to-view-id>/welcomeBeanify.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+ <display-name>showLikedSongs</display-name>
+  <from-view-id>/showArtists.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>welcomeBeanify.xhtml</from-outcome>
+   <to-view-id>/welcomeBeanify.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
   <display-name>showArtists.xhtml</display-name>
   <from-view-id>/showArtists.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>#{ArtistBean.selectArtist}</from-outcome>
    <to-view-id>/showAlbums.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <display-name>showArtists.xhtml</display-name>
+  <from-view-id>/showArtists.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>#{ArtistBean.myLikedSongs}</from-outcome>
+   <to-view-id>/showLikedSongs.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <display-name>showLikedSongs.xhtml</display-name>
+  <from-view-id>/showLikedSongs.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>#{ArtistBean.selectArtist}</from-outcome>
+   <to-view-id>showArtists.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+  <display-name>showAlbums.xhtml</display-name>
+  <from-view-id>/showAlbums.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>#{ArtistBean.selectArtist}</from-outcome>
+   <to-view-id>showArtists.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  

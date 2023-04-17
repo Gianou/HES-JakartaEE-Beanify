@@ -10,15 +10,60 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#showArtists.xhtml" PATH="/showArtists.xhtml"
-  SHAPE="496,160,50,25" model-entity="JSFProcessGroup">
+  SHAPE="432,168,50,57" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#showArtists.xhtml:0" NAME="item"
+   PATH="/showArtists.xhtml" SHAPE="448,190,47,15" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="welcomeBeanify.xhtml::#welcomeBeanify.xhtml"
+    NAME="output" PATH="/welcomeBeanify.xhtml"
+    TARGET="rules:#welcomeBeanify.xhtml" TITLE="welcomeBeanify.xhtml" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#showArtists.xhtml:1" NAME="item1"
+   PATH="/showArtists.xhtml" SHAPE="448,198,47,15" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="welcomeBeanify.xhtml::#welcomeBeanify.xhtml"
+    NAME="output" PATH="/welcomeBeanify.xhtml"
+    TARGET="rules:#welcomeBeanify.xhtml" TITLE="welcomeBeanify.xhtml" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#showArtists.xhtml:2" NAME="item2"
    PATH="/showArtists.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="#{ArtistBean.selectArtist}::#showAlbums.xhtml" NAME="output"
     PATH="/showAlbums.xhtml" TARGET="rules:#showAlbums.xhtml"
     TITLE="#{ArtistBean.selectArtist}" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#showArtists.xhtml:3" NAME="item3"
+   PATH="/showArtists.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="#{ArtistBean.myLikedSongs}::#showLikedSongs.xhtml" NAME="output"
+    PATH="/showLikedSongs.xhtml" TARGET="rules:#showLikedSongs.xhtml"
+    TITLE="#{ArtistBean.myLikedSongs}" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#showAlbums.xhtml" PATH="/showAlbums.xhtml"
-  SHAPE="816,168,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+  SHAPE="840,104,50,25" model-entity="JSFProcessGroup" persistent="true">
+  <PROCESS-ITEM ID="rules:#showAlbums.xhtml:0" NAME="item"
+   PATH="/showAlbums.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="welcomeBeanify.xhtml::#welcomeBeanify.xhtml"
+    NAME="output" PATH="/welcomeBeanify.xhtml"
+    TARGET="rules:#welcomeBeanify.xhtml" TITLE="welcomeBeanify.xhtml" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#showAlbums.xhtml:1" NAME="item1"
+   PATH="/showAlbums.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="#{ArtistBean.selectArtist}::showArtists.xhtml" NAME="output"
+    PATH="showArtists.xhtml" TARGET="rules:showArtists.xhtml"
+    TITLE="#{ArtistBean.selectArtist}" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#showLikedSongs.xhtml"
+  PATH="/showLikedSongs.xhtml" SHAPE="624,360,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#showLikedSongs.xhtml:0" NAME="item"
+   PATH="/showLikedSongs.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="#{ArtistBean.selectArtist}::showArtists.xhtml" NAME="output"
+    PATH="showArtists.xhtml" TARGET="rules:showArtists.xhtml"
+    TITLE="#{ArtistBean.selectArtist}" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:showArtists.xhtml" PATH="showArtists.xhtml"
+  SHAPE="880,385,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

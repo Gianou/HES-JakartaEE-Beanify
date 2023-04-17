@@ -25,6 +25,8 @@ public class ArtistBean
 	private Artist selectedArtist;
 	private Subscriber currentSubscriber;
 
+	
+
 	@PostConstruct
     public void initialize(){
 		try {
@@ -34,8 +36,10 @@ public class ArtistBean
 			// get subscriber
 			currentSubscriber = beanify.getSubscriberByEmail("name.surname@domain.com");
 			
-	    	// get clients
+	    	// get artists and set first as default
 			artists = beanify.getArtists();
+			// TO DO Check this
+			selectedArtistName = artists.get(0).getArtistName();
 			this.artistNames = new ArrayList<String>();
 			for (Artist artist : artists) {
 				this.artistNames.add(artist.getArtistName());
@@ -51,7 +55,7 @@ public class ArtistBean
 		
 		// TO DO Check if test works
 		Subscriber sub = beanify.getSubscriberByEmail("name.surname@domain.com");
-		//beanify.getSubscriberLikedSongs(currentSubscriber)
+		
 		if(sub.getLikedSongs().contains(likedSong.getId())) {
 		//if(true) {
 			System.out.println("Retourne chez toi");
@@ -111,7 +115,17 @@ public class ArtistBean
 		this.selectedArtist = selectedArtist;
 	}
 
+	public String myLikedSongs() {
+		return "showLikedSongs";
+	}
 	
+	public Subscriber getCurrentSubscriber() {
+		return currentSubscriber;
+	}
+
+	public void setCurrentSubscriber(Subscriber currentSubscriber) {
+		this.currentSubscriber = currentSubscriber;
+	}
 
 }
 

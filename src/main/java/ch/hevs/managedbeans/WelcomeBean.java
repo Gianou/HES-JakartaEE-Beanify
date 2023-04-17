@@ -13,8 +13,6 @@ public class WelcomeBean
 {
 	private Populate populate;
 	
-	
-	
     public void populate(){
 		try {
     	InitialContext ctx = new InitialContext();

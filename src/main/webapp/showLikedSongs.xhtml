@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+    <div class="nav">
+    	
+        
+        <h:form>
+        <h:commandLink action="welcomeBeanify">
+         <h:commandButton value="Home Page" />
+        </h:commandLink>
+        </h:form> 
+        
+        <h:form>
+        <h:commandLink action="showArtists">
+         <h:commandButton value="Click here to find an artist" />
+        </h:commandLink>
+        </h:form> 
+        
+        <h:form>	
+     		<h:commandButton value="My Liked Songs" action="#{artistBean.myLikedSongs}" 
+     			></h:commandButton>
+        </h:form> 
+    </div>
+    	
+    	
+    	<h:dataTable value = "#{artistBean.currentSubscriber.likedSongs}" var = "song">
+		   <h:column>    				
+		      <f:facet name = "header"></f:facet>                    
+              <h3>#{song.songTitle}</h3>
+		   </h:column>
+		</h:dataTable>
+		
+		
+    					
+    </ui:define>
+</ui:composition>
+</html>

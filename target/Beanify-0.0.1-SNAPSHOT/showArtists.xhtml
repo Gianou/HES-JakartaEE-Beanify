@@ -8,6 +8,27 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
+    <div class="nav">
+    	
+        
+        <h:form>
+        <h:commandLink action="welcomeBeanify">
+         <h:commandButton value="Home Page" />
+        </h:commandLink>
+        </h:form> 
+        
+        <h:form>
+        <h:commandLink action="showArtists">
+         <h:commandButton value="Click here to find an artist" />
+        </h:commandLink>
+        </h:form> 
+        
+        <h:form>	
+     		<h:commandButton value="My Liked Songs" action="#{artistBean.myLikedSongs}" 
+     			></h:commandButton>
+        </h:form> 
+    </div>
+    
     	<h:form 
     		style="display: flex;
     		flex-direction:column;
@@ -20,13 +41,15 @@
         		<br></br>
         	</h:outputLabel>
 	        	<h:selectOneMenu  value="#{artistBean.selectedArtistName}" onchange="submit()" 
-	        	style="margin:3vw;font-size:16px;">
+	        	>
 	        		<f:selectItems value="#{artistBean.artistNames}"/>
 	        	</h:selectOneMenu>
-        	
-     		<h:commandButton value="Show Discography!" action="#{artistBean.selectArtist}" 
-     			style="margin:3vw;font-size:16px;"></h:commandButton>
-        </h:form>
+        </h:form> 
+        
+        <h:form>
+        <h:commandButton value="Show Discography!" action="#{artistBean.selectArtist}" 
+     			style="margin:3vw"></h:commandButton>
+     	</h:form>
     </ui:define>
 </ui:composition>
 </html>
