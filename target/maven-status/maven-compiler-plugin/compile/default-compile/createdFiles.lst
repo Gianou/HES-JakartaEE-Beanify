@@ -1,3 +1,11 @@
+ch\hevs\beanifyservice\Beanify.class
+ch\hevs\businessobject\Subscriber.class
 ch\hevs\beanifyservice\Populate.class
+ch\hevs\beanifyservice\BeanifyBean.class
+ch\hevs\businessobject\Person.class
+ch\hevs\businessobject\Song.class
 ch\hevs\beanifyservice\PopulateBean.class
 ch\hevs\managedbeans\WelcomeBean.class
+ch\hevs\businessobject\Album.class
+ch\hevs\managedbeans\ArtistBean.class
+ch\hevs\businessobject\Artist.class

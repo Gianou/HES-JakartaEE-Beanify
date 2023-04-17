@@ -30,16 +30,20 @@ public class Song {
 	@ManyToOne
 	private Album album;
 	
-	@ManyToMany(mappedBy = "songs", cascade = CascadeType.ALL)
+	@ManyToMany
 	private Set<Artist> artists;
 	
+	//Helper method
+	public void addArtist(Artist artist) {
+		this.artists.add(artist);
+	}
 
 	//CONSTRUCTOR
 	public Song() {
 		super();
 		artists = new HashSet<Artist>();
 	}
-	//CONSTRUCTOR
+	
 	public Song(String title, String url) {
 		super();
 		this.songTitle = title;

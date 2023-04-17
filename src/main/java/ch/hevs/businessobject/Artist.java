@@ -24,10 +24,6 @@ public class Artist extends Person {
 	
 	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<Album> albums;
-
-	@ManyToMany
-	private Set<Song> songs;
-	
 	
 	// GETTER SETTER
 	public String getArtistName() {
@@ -45,14 +41,6 @@ public class Artist extends Person {
 	public void setAlbums(Set<Album> albums) {
 		this.albums = albums;
 	}
-
-	public Set<Song> getSongs() {
-		return songs;
-	}
-
-	public void setSongs(Set<Song> songs) {
-		this.songs = songs;
-	}
 	
 	public void addAlbum(Album album) {
 		albums.add(album);
@@ -63,14 +51,14 @@ public class Artist extends Person {
 	public Artist(long id, String firstName, String lastName) {
 		super(id, firstName, lastName);
 		albums = new HashSet<Album>();
-		songs = new HashSet<Song>();
+		
 	}
 	
 	public Artist()
 	{
 		super();
 		albums = new HashSet<Album>();
-		songs = new HashSet<Song>();
+		
 	}
 	
 }

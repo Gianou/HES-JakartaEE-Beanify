@@ -56,9 +56,10 @@ public class PopulateBean implements Populate{
 			al1songs.add(new Song("Last Kiss", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Dangerous Days", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			for (Song song : al1songs) {
+				song.addArtist(a);
 				al1.addSong(song);
 			}
-			
+			a.addAlbum(al1);
 			
 			Album al2 = new Album("Nocturne City", "02-08-2012");
 			List<Song> al2songs = new ArrayList<Song>();
@@ -69,11 +70,9 @@ public class PopulateBean implements Populate{
 			al2songs.add(new Song("There Is No Love Highway", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al2songs.add(new Song("Vengeance", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			for (Song song : al2songs) {
+				song.addArtist(a);
 				al2.addSong(song);
 			}
-			
-			
-			a.addAlbum(al1);
 			a.addAlbum(al2);
 			
 			em.persist(s);
