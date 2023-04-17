@@ -15,15 +15,17 @@
         	justify-content: center;
         	">
         	
-        	<h:outputLabel value="Artists 5" 
-        		style="margin:4vw;"><br></br></h:outputLabel>
+        	<h:outputLabel style="margin:4vw;">
+        		<h2>Choose an Artist</h2>
+        		<br></br>
+        	</h:outputLabel>
 	        	<h:selectOneMenu  value="#{artistBean.selectedArtistName}" onchange="submit()" 
-	        	style="margin:4vw;">
+	        	style="margin:3vw;font-size:16px;">
 	        		<f:selectItems value="#{artistBean.artistNames}"/>
 	        	</h:selectOneMenu>
         	
      		<h:commandButton value="Show Discography!" action="#{artistBean.selectArtist}" 
-     			style="margin:4vw;"></h:commandButton>
+     			style="margin:3vw;font-size:16px;"></h:commandButton>
         </h:form>
     </ui:define>
 </ui:composition>

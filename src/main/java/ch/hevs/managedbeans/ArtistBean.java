@@ -23,65 +23,49 @@ public class ArtistBean
 	private Beanify beanify;
 	private String selectedArtistName;
 	private Artist selectedArtist;
-	private Long likedSongId;
 	private Subscriber currentSubscriber;
-	
-	
-	public Long getLikedSongId() {
-		return likedSongId;
-	}
-	
-	public void setLikedSongId(Long likedSongId) {
-		this.likedSongId = likedSongId;
-	}
-
-	
-	public void addToSubLikedSong(Long id) {
-		//System.out.println("ça set la chanson likée");
-		likedSongId = id;
-		Song likedSong = beanify.getSongById(likedSongId);
-		//System.out.println(likedSong.getSongTitle());
-		//System.out.println(currentSubscriber.getEmail());
-		//Check if already in liked songs
-		if(currentSubscriber.getLikedSongs().contains(likedSong)) {
-		//if(true) {
-			System.out.println("Retourne chez toi");
-			return;
-		}
-		else {
-			currentSubscriber.addLikedSong(likedSong);
-			//System.out.println("Ajouté au sub");
-			beanify.persistSub(currentSubscriber);
-			//this.likedSong = likedSong;
-		}
-		
-	}
 
 	@PostConstruct
     public void initialize(){
 		try {
-    	InitialContext ctx = new InitialContext();
-		beanify = (Beanify) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/BeanifyBean!ch.hevs.beanifyservice.Beanify");
+	    	InitialContext ctx = new InitialContext();
+			beanify = (Beanify) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/BeanifyBean!ch.hevs.beanifyservice.Beanify");
+				
+			// get subscriber
+			currentSubscriber = beanify.getSubscriberByEmail("name.surname@domain.com");
 			
-		// get subscriber
-		currentSubscriber = beanify.getSubscriberByEmail("name.surname@domain.com");
-		
-    	// get clients
-		artists = beanify.getArtists();
-		this.artistNames = new ArrayList<String>();
-		for (Artist artist : artists) {
-			this.artistNames.add(artist.getArtistName());
-		}
+	    	// get clients
+			artists = beanify.getArtists();
+			this.artistNames = new ArrayList<String>();
+			for (Artist artist : artists) {
+				this.artistNames.add(artist.getArtistName());
+			}
 		
 		}catch(NamingException e) {
 			e.printStackTrace();
 		}
     }
+	
+	public void addToSubLikedSong(Long id) {
+		Song likedSong = beanify.getSongById(id);
+		
+		// TO DO Check if test works
+		Subscriber sub = beanify.getSubscriberByEmail("name.surname@domain.com");
+		//beanify.getSubscriberLikedSongs(currentSubscriber)
+		if(sub.getLikedSongs().contains(likedSong.getId())) {
+		//if(true) {
+			System.out.println("Retourne chez toi");
+			return;
+		}
+		else {
+			beanify.addLikedSongToSubscriber(sub, likedSong);
+		}
+		
+	}
     
 	// Method called when button clicked
 	public String selectArtist() {
 		setSelectedArtist(beanify.getArtist(selectedArtistName)); // Is there a way to get the Artist rather then the ArtistName?
-		System.out.println("Ca select l'artiste!");
 		return "showAlbums";
 	}
 	

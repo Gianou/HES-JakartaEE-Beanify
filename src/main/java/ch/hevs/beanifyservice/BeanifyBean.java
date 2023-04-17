@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
@@ -41,23 +43,15 @@ public class BeanifyBean implements Beanify{
 		
 	}
 
+	public void addLikedSongToSubscriber(Subscriber sub, Song song) {
+		Subscriber sub2 = em.merge(sub);
+		Song song2 = em.merge(song);
+		sub2.addLikedSong(song2);
+	}
+
 	@Override
-	public void persistSub(Subscriber sub) {
-		//EntityTransaction tx = null;
-		//try {
-			//tx = em.getTransaction();
-			//tx.begin();
-			
-			Subscriber sub2 = em.merge(sub);
-			em.persist(sub2);
-			//tx.commit();
-		//}
-		//catch(Exception e) {
-		//	e.printStackTrace();
-		//}
-		
+	public List<Song> getSubscriberLikedSongs(Subscriber sub) {
+		return em.createQuery("From Subscriber_Song").getResultList();
 	}
 	
-
-
 }

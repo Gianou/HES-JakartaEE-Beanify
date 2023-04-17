@@ -27,16 +27,11 @@ public class PopulateBean implements Populate{
 			tx = em.getTransaction();
 			tx.begin();
 			
-			// Subscirbers
-			
+			// Subscribers
 			Subscriber c = new Subscriber("name.surname@domain.com", "David", "Gianadda");
 			
 			// PERTURBATOR
-			
-			Artist b = new Artist("DaBoy", "Anthony", "Le Meillour");
-			
 			Artist a = new Artist("Perturbator", "James", "Kent");
-			
 			Album al1 = new Album("Dangerous Days", "17-06-2014");
 			List<Song> al1songs = new ArrayList<Song>();
 			al1songs.add(new Song("Welcome Back", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
@@ -72,12 +67,31 @@ public class PopulateBean implements Populate{
 			}
 			a.addAlbum(al2);
 			
+			// CARPENTER BRUT
+			Artist b = new Artist("Carpenter Brut", "Franck", "Hueso");
+			Album al3 = new Album("Leather Teeth", "23-02-2018");
+			List<Song> al3songs = new ArrayList<Song>();
+			al3songs.add(new Song("Leather Teeth", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("Cheerleader Effect", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("Sunday Lunch", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("Monday Hunt", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("Inferno Galore", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("Beware The Beat", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("Hairspray Hurricane", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al3songs.add(new Song("End Titles", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			for (Song song : al3songs) {
+				song.addArtist(b);
+				al3.addSong(song);
+			}
+			b.addAlbum(al3);
+			
 			
 			em.persist(a);
 			em.persist(b);
 			em.persist(c);
 			em.persist(al1);
 			em.persist(al2);
+			em.persist(al3);
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
