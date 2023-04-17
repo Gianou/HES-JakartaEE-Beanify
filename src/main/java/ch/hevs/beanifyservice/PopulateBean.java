@@ -42,33 +42,32 @@ public class PopulateBean implements Populate{
 			
 			Album al1 = new Album("Dangerous Days", "17-06-2014");
 			List<Song> al1songs = new ArrayList<Song>();
-			al1songs.add(new Song("Welcome Back"));
-			al1songs.add(new Song("Perturbators's Theme"));
-			al1songs.add(new Song("Raw Power"));
-			al1songs.add(new Song("Future Club"));
-			al1songs.add(new Song("War Against Machines"));
-			al1songs.add(new Song("Hard Wired"));
-			al1songs.add(new Song("She Is Young, She is Next"));
-			al1songs.add(new Song("Humans Are Such Easy Prey"));
-			al1songs.add(new Song("Minuit"));
-			al1songs.add(new Song("Satanic Rites"));
-			al1songs.add(new Song("Complete Domination (feat. Carpenter Brut"));
-			al1songs.add(new Song("Last Kiss"));
-			al1songs.add(new Song("Dangerous Days"));
+			al1songs.add(new Song("Welcome Back", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Perturbators's Theme", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Raw Power", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Future Club", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("War Against Machines", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Hard Wired", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("She Is Young, She is Next", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Humans Are Such Easy Prey", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Minuit", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Satanic Rites", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Complete Domination (feat. Carpenter Brut", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Last Kiss", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Dangerous Days", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			for (Song song : al1songs) {
 				al1.addSong(song);
 			}
 			
 			
-			
 			Album al2 = new Album("Nocturne City", "02-08-2012");
 			List<Song> al2songs = new ArrayList<Song>();
-			al2songs.add(new Song("Intro (The Journey)"));
-			al2songs.add(new Song("Welcome to Nocturne City"));
-			al2songs.add(new Song("Fantasy"));
-			al2songs.add(new Song("Night Business"));
-			al2songs.add(new Song("There Is No Love Highway"));
-			al2songs.add(new Song("Vengeance"));
+			al2songs.add(new Song("Intro (The Journey)", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al2songs.add(new Song("Welcome to Nocturne City", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al2songs.add(new Song("Fantasy", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al2songs.add(new Song("Night Business", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al2songs.add(new Song("There Is No Love Highway", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al2songs.add(new Song("Vengeance", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			for (Song song : al2songs) {
 				al2.addSong(song);
 			}
@@ -88,8 +87,6 @@ public class PopulateBean implements Populate{
 			e.printStackTrace();
 		}
 		
-		return "showArtists";
-		
+		return "showArtists";	
 	}
-
 }

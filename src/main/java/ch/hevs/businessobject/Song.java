@@ -40,9 +40,10 @@ public class Song {
 		artists = new HashSet<Artist>();
 	}
 	//CONSTRUCTOR
-	public Song(String title) {
+	public Song(String title, String url) {
 		super();
 		this.songTitle = title;
+		this.url = url;
 		artists = new HashSet<Artist>();
 	}
 	

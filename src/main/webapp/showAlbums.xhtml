@@ -16,20 +16,20 @@
 			headerClass = "albumTableHeader"
 			rowClasses = "albumTableRow">
 		   <h:column>    				
-		      <f:facet name = "header">Title</f:facet>    				
-		      #{album.albumTitle}
-		      
-			   <h:dataTable value = "#{album.songs}" var = "song">
-				   <h:column>    				
-				      <f:facet name = "header">Song</f:facet>    				
-				      #{song.songTitle}
-				   </h:column>
-				   
-				   <h:column>
-				      <f:facet name = "header"></f:facet>
-				     URL
-				   </h:column>
-			   </h:dataTable>
+		      <f:facet name = "header">Title</f:facet>                    
+              #{album.albumTitle}
+
+				<h:dataTable value = "#{album.songs}" var = "song">
+				<h:column>                    
+				<f:facet name = "header">Song</f:facet>                    
+				                      #{song.songTitle}
+				</h:column>
+				
+				<h:column>
+				<f:facet name = "header"></f:facet>
+				<a href="#{song.url}">&#9654;</a>
+				</h:column>
+				</h:dataTable>
 		      
 		      
 		   </h:column>
