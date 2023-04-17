@@ -26,11 +26,13 @@ public class BeanifyBean implements Beanify{
 		return em.createQuery("FROM Artist").getResultList();
 	}
 
+	
 	@Override
 	public List<Album> getAlbums(float id) {
 		// TO DO add a where id = artist Id or something
 		return em.createQuery("From Album").getResultList();
 		
 	}
+	
 
 }

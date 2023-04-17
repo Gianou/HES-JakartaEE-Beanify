@@ -39,6 +39,12 @@ public class Song {
 		super();
 		artists = new HashSet<Artist>();
 	}
+	//CONSTRUCTOR
+	public Song(String title) {
+		super();
+		this.songTitle = title;
+		artists = new HashSet<Artist>();
+	}
 	
 	// GETTER SETTER
 

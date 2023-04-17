@@ -42,9 +42,11 @@ public class ArtistBean
 		}
     }
     
+	// Method called when button clicked
 	public String selectArtist() {
-		
-		setSelectedArtist(beanify.getArtist(selectedArtistName));
+		// TO DO Improve the code, Artist should be enough, no need to retrieve selectedArtistAlbums and selectedArtistAlbumsNames
+		// will have to change Artist.albums to fetchType.EAGER
+		setSelectedArtist(beanify.getArtist(selectedArtistName)); // Is there a way to get the Artist rather then the ArtistName?
 		selectedArtistAlbums = new ArrayList<Album>();
 		
 		selectedArtistAlbums = beanify.getAlbums(selectedArtist.getId());

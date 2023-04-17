@@ -9,6 +9,8 @@ import ch.hevs.businessobject.Album;
 import ch.hevs.businessobject.Artist;
 import ch.hevs.businessobject.Song;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 
@@ -27,23 +29,51 @@ public class PopulateBean implements Populate{
 			s.setSongTitle("sucepute");
 			s.setUrl("URL");
 			
-			Artist a = new Artist();
-			a.setArtistName("Perturbator");
+			
 			Artist b = new Artist();
 			b.setArtistName("Antho");
 			Artist c = new Artist();
 			c.setArtistName("David");
 			
-			Album al1 = new Album();
-			al1.setAlbumTitle("Title1");
-			al1.setReleaseDate("1999-09-09");
 			
-			Album al2 = new Album();
-			al2.setAlbumTitle("Title2");
-			al2.setReleaseDate("1992-09-09");
+			// PERTURBATOR
+			Artist a = new Artist();
+			a.setArtistName("Perturbator");
 			
-			//al1.setArtist(a);
-			//al2.setArtist(a);
+			Album al1 = new Album("Dangerous Days", "17-06-2014");
+			List<Song> al1songs = new ArrayList<Song>();
+			al1songs.add(new Song("Welcome Back"));
+			al1songs.add(new Song("Perturbators's Theme"));
+			al1songs.add(new Song("Raw Power"));
+			al1songs.add(new Song("Future Club"));
+			al1songs.add(new Song("War Against Machines"));
+			al1songs.add(new Song("Hard Wired"));
+			al1songs.add(new Song("She Is Young, She is Next"));
+			al1songs.add(new Song("Humans Are Such Easy Prey"));
+			al1songs.add(new Song("Minuit"));
+			al1songs.add(new Song("Satanic Rites"));
+			al1songs.add(new Song("Complete Domination (feat. Carpenter Brut"));
+			al1songs.add(new Song("Last Kiss"));
+			al1songs.add(new Song("Dangerous Days"));
+			for (Song song : al1songs) {
+				al1.addSong(song);
+			}
+			
+			
+			
+			Album al2 = new Album("Nocturne City", "02-08-2012");
+			List<Song> al2songs = new ArrayList<Song>();
+			al2songs.add(new Song("Intro (The Journey)"));
+			al2songs.add(new Song("Welcome to Nocturne City"));
+			al2songs.add(new Song("Fantasy"));
+			al2songs.add(new Song("Night Business"));
+			al2songs.add(new Song("There Is No Love Highway"));
+			al2songs.add(new Song("Vengeance"));
+			for (Song song : al2songs) {
+				al2.addSong(song);
+			}
+			
+			
 			a.addAlbum(al1);
 			a.addAlbum(al2);
 			

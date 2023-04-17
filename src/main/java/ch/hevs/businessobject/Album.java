@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +33,13 @@ public class Album {
 	@ManyToOne
 	private Artist artist;
 	
-	@OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "album", cascade = CascadeType.ALL, fetch = FetchType.EAGER) //Eager required to display the song with Album.songs in the view
 	private Set<Song> songs;
+	
+	public void addSong(Song song) {
+		song.setAlbum(this);
+		this.songs.add(song);
+	}
 
 	
 	// GETTER SETTER
@@ -80,6 +86,13 @@ public class Album {
 	//CONSTRUCTOR
 	public Album() {
 		super();
+		songs = new HashSet <Song>();
+	}
+	
+	public Album(String albumTitle, String date) {
+		super();
+		this.albumTitle = albumTitle;
+		this.releaseDate = date;
 		songs = new HashSet <Song>();
 	}
 	
