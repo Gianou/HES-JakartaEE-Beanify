@@ -1,17 +1,12 @@
 package ch.hevs.businessobject;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,7 +18,7 @@ public class Artist extends Person {
 	private String artistName;
 	
 	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Set<Album> albums;
+	private List<Album> albums;
 	
 	// GETTER SETTER
 	public String getArtistName() {
@@ -34,11 +29,11 @@ public class Artist extends Person {
 		this.artistName = artistName;
 	}
 
-	public Set<Album> getAlbums() {
+	public List<Album> getAlbums() {
 		return albums;
 	}
 
-	public void setAlbums(Set<Album> albums) {
+	public void setAlbums(List<Album> albums) {
 		this.albums = albums;
 	}
 	
@@ -51,14 +46,14 @@ public class Artist extends Person {
 	public Artist(String artistName, String firstName, String lastName) {
 		super(firstName, lastName);
 		this.artistName = artistName;
-		albums = new HashSet<Album>();
+		albums = new ArrayList<Album>();
 		
 	}
 	
 	public Artist()
 	{
 		super();
-		albums = new HashSet<Album>();
+		albums = new ArrayList<Album>();
 		
 	}
 	
