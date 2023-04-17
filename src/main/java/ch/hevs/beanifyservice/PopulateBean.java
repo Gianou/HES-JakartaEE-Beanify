@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import ch.hevs.businessobject.Album;
 import ch.hevs.businessobject.Artist;
 import ch.hevs.businessobject.Song;
+import ch.hevs.businessobject.Subscriber;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,20 +26,16 @@ public class PopulateBean implements Populate{
 			EntityManager em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			Song s = new Song();
-			s.setSongTitle("sucepute");
-			s.setUrl("URL");
 			
+			// Subscirbers
 			
-			Artist b = new Artist();
-			b.setArtistName("Antho");
-			Artist c = new Artist();
-			c.setArtistName("David");
-			
+			Subscriber c = new Subscriber("name.surname@domain.com", "David", "Gianadda");
 			
 			// PERTURBATOR
-			Artist a = new Artist();
-			a.setArtistName("Perturbator");
+			
+			Artist b = new Artist("DaBoy", "Anthony", "Le Meillour");
+			
+			Artist a = new Artist("Perturbator", "James", "Kent");
 			
 			Album al1 = new Album("Dangerous Days", "17-06-2014");
 			List<Song> al1songs = new ArrayList<Song>();
@@ -52,7 +49,7 @@ public class PopulateBean implements Populate{
 			al1songs.add(new Song("Humans Are Such Easy Prey", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Minuit", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Satanic Rites", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-			al1songs.add(new Song("Complete Domination (feat. Carpenter Brut", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			al1songs.add(new Song("Complete Domination (feat. Carpenter Brut)", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Last Kiss", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Dangerous Days", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			for (Song song : al1songs) {
@@ -75,7 +72,7 @@ public class PopulateBean implements Populate{
 			}
 			a.addAlbum(al2);
 			
-			em.persist(s);
+			
 			em.persist(a);
 			em.persist(b);
 			em.persist(c);

@@ -6,12 +6,16 @@ import javax.ejb.Local;
 
 import ch.hevs.businessobject.Album;
 import ch.hevs.businessobject.Artist;
+import ch.hevs.businessobject.Song;
+import ch.hevs.businessobject.Subscriber;
 
 @Local
 public interface Beanify {
 
 	Artist getArtist(String artistName);
 	List<Artist> getArtists();
-	List<Album> getAlbums(float id);
+	Subscriber getSubscriberByEmail(String email);
+	Song getSongById(Long id);
+	void persistSub(Subscriber sub);
 	
 }

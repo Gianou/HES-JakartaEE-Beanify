@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -17,11 +18,13 @@ public class Subscriber extends Person{
 	@Column(name="email")
 	private String email;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<Song> likedSongs;
-	
-
-	
+		
+	//Helper method
+		public void addLikedSong(Song song) {
+			this.likedSongs.add(song);
+		}
 	
 	// GETTER SETTER
 	public String getEmail() {
@@ -41,8 +44,9 @@ public class Subscriber extends Person{
 	}
 
 	//CONSTRUCTOR
-	public Subscriber(long id, String firstName, String lastName) {
-		super(id, firstName, lastName);
+	public Subscriber(String email, String firstName, String lastName) {
+		super(firstName, lastName);
+		this.email = email;
 		likedSongs = new HashSet<Song>();
 	}
 	

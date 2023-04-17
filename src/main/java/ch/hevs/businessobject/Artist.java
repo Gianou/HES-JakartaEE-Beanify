@@ -48,8 +48,9 @@ public class Artist extends Person {
 	}
 	
 	// CONSTRUCTOR
-	public Artist(long id, String firstName, String lastName) {
-		super(id, firstName, lastName);
+	public Artist(String artistName, String firstName, String lastName) {
+		super(firstName, lastName);
+		this.artistName = artistName;
 		albums = new HashSet<Album>();
 		
 	}
