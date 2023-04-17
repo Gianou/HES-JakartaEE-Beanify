@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,7 @@ public class Artist extends Person {
 	@Column(name="artistName", unique=true)
 	private String artistName;
 	
-	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<Album> albums;
 
 	@ManyToMany

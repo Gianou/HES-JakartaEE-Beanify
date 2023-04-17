@@ -19,9 +19,6 @@ public class ArtistBean
 	private Beanify beanify;
 	private String selectedArtistName;
 	private Artist selectedArtist;
-	private List<Album> selectedArtistAlbums;
-	private List<String> selectedArtistAlbumsNames;
-	
 	
 	
 	@PostConstruct
@@ -47,13 +44,8 @@ public class ArtistBean
 		// TO DO Improve the code, Artist should be enough, no need to retrieve selectedArtistAlbums and selectedArtistAlbumsNames
 		// will have to change Artist.albums to fetchType.EAGER
 		setSelectedArtist(beanify.getArtist(selectedArtistName)); // Is there a way to get the Artist rather then the ArtistName?
-		selectedArtistAlbums = new ArrayList<Album>();
 		
-		selectedArtistAlbums = beanify.getAlbums(selectedArtist.getId());
-		selectedArtistAlbumsNames = new ArrayList<String>();
-		for (Album album : selectedArtistAlbums) {
-			this.selectedArtistAlbumsNames.add(album.getAlbumTitle());
-		}
+		
 		
 		return "showAlbums";
 	}
@@ -99,21 +91,7 @@ public class ArtistBean
 		this.selectedArtist = selectedArtist;
 	}
 
-	public List<Album> getSelectedArtistAlbums() {
-		return selectedArtistAlbums;
-	}
-
-	public void setSelectedArtistAlbums(List<Album> selectedArtistAlbums) {
-		this.selectedArtistAlbums = selectedArtistAlbums;
-	}
-
-	public List<String> getSelectedArtistAlbumsNames() {
-		return selectedArtistAlbumsNames;
-	}
-
-	public void setSelectedArtistAlbumsNames(List<String> selectedArtistAlbumsNames) {
-		this.selectedArtistAlbumsNames = selectedArtistAlbumsNames;
-	}
+	
 
 }
 
