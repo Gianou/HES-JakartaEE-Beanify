@@ -69,14 +69,17 @@
 				   </h:column>
 				</h:dataTable>
 	
-		   
-			</h:column>
+		</h:column>
 			
-			
+		<h:column>
+			<h:form>
+				<h:commandButton action="#{artistBean.deleteSelectedSong(song.id)}" value="Delete" />
+			</h:form>
+		</h:column>
+	
 		</h:dataTable>
 		
 		
-    					
     </ui:define>
 </ui:composition>
 </html>

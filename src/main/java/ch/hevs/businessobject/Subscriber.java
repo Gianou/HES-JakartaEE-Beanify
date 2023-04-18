@@ -23,9 +23,13 @@ public class Subscriber extends Person{
 	private List<Song> likedSongs;
 		
 	//Helper method
-		public void addLikedSong(Song song) {
-			this.likedSongs.add(song);
-		}
+	public void addLikedSong(Song song) {
+		this.likedSongs.add(song);
+	}
+	
+	public void deleteLikedSong(Song song) {
+		this.likedSongs.remove(song);
+	}
 	
 	// GETTER SETTER
 	public String getEmail() {

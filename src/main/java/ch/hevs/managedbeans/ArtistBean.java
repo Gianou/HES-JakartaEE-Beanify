@@ -27,24 +27,32 @@ public class ArtistBean
 	private List<Subscriber> subscribers;
 	private Subscriber selectedSubscriber;
 	private Long selectedSubscriberId;
+	
+	private List<Album> albums;
+
+	
 
 	
 
 	@PostConstruct
     public void initialize(){
 		try {
+			System.out.println("####################");
+			System.out.println("####################");
+			System.out.println("####################");
 	    	InitialContext ctx = new InitialContext();
 			beanify = (Beanify) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/BeanifyBean!ch.hevs.beanifyservice.Beanify");
 				
-			// GET SUBSCRIBERS
+			// GET SUBSCRIBERS and set a default value
 			subscribers = beanify.getSubscribers();
-			// Default Value
 			selectedSubscriberId = subscribers.get(0).getId();
 			
-	    	// GET ARTISTS
+	    	// GET ARTISTS and set a default value
 			artists = beanify.getArtists();
-			// Default value
 			selectedArtistId = artists.get(0).getId();
+			System.out.println("####################");
+			System.out.println("####################");
+			System.out.println("####################");
 		
 		}catch(NamingException e) {
 			e.printStackTrace();
@@ -53,33 +61,35 @@ public class ArtistBean
 	
 	public void addToSubLikedSong(Long id) {
 		Song likedSong = beanify.getSongById(id);
-		
-		// TO DO Check if test works
-		//Subscriber sub = beanify.getSubscriberByEmail("name.surname@domain.com");
 		selectedSubscriber = beanify.getSubscriberByID(selectedSubscriberId);
 		List <Long> alreadyLiked = new ArrayList<Long>();
 		alreadyLiked = beanify.getSubscriberLikedSongs(selectedSubscriber);
 		
 		if(alreadyLiked.contains(likedSong.getId())) {
-			System.out.println("Retourne chez toi");
 			return;
 		}
 		else {
-			for (Long s : alreadyLiked) {
-				System.out.println(s + "\r\n");
-			}
 			beanify.addLikedSongToSubscriber(selectedSubscriber, likedSong);
 		}
 		
 	}
+	
+	public void deleteSelectedSong(Long id) {
+		Song likedSong = beanify.getSongById(id);
+		selectedSubscriber = beanify.getSubscriberByID(selectedSubscriberId);
+		beanify.removeLikedSongToSubscriber(selectedSubscriber, likedSong);
+	}
+	
 	
 	public void reloadSubscriber() {
 		selectedSubscriber  = beanify.getSubscriberByID(selectedSubscriberId);
 	}
     
 	
-	public String selectArtist() {
-		selectedArtist = beanify.getArtistByID(selectedArtistId); 
+	public String selectArtistAndDisplayAlbums() {
+		//Fetch the albums
+		selectedArtist = beanify.getArtistByID(selectedArtistId);
+		albums = beanify.loadArtistAlbums(selectedArtist);
 		return "showAlbums";
 	}
 	
@@ -144,6 +154,14 @@ public class ArtistBean
 
 	public void setSelectedSubscriber(Subscriber selectedSubscriber) {
 		this.selectedSubscriber = selectedSubscriber;
+	}
+	
+	public List<Album> getAlbums() {
+		return albums;
+	}
+
+	public void setAlbums(List<Album> albums) {
+		this.albums = albums;
 	}
 
 }

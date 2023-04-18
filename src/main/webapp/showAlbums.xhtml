@@ -57,7 +57,7 @@
     		<h1>#{artistBean.selectedArtist.artistName}</h1>
     	</h:outputLabel>
     	
-    	<h:dataTable value = "#{artistBean.selectedArtist.albums}" var = "album" class="displayAlbumAndSongs">
+    	<h:dataTable value = "#{artistBean.albums}" var = "album" class="displayAlbumAndSongs">
 		   <h:column>    				
 		      <f:facet name = "header"></f:facet>                    
               <h3>#{album.albumTitle}</h3>

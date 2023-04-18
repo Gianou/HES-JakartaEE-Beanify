@@ -17,7 +17,7 @@ public class Artist extends Person {
 	@Column(name="artistName", unique=true)
 	private String artistName;
 	
-	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Album> albums;
 	
 	// GETTER SETTER

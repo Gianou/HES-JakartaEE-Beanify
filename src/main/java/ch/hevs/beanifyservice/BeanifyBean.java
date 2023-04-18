@@ -22,13 +22,14 @@ public class BeanifyBean implements Beanify{
 	@PersistenceContext(name = "BeanifyPU", type=PersistenceContextType.TRANSACTION)
 	private EntityManager em;
 
+	@Override
 	public Artist getArtistByID(Long id) {
 		
 		return (Artist) em.createQuery("From Artist a WHERE a.id =: id")
 				.setParameter("id", id).getSingleResult();
 	}
 
-	
+	@Override
 	public List<Artist> getArtists() {
 		return em.createQuery("SELECT a FROM Artist a").getResultList();
 	}
@@ -45,6 +46,7 @@ public class BeanifyBean implements Beanify{
 		
 	}
 
+	@Override
 	public void addLikedSongToSubscriber(Subscriber sub, Song song) {
 		Subscriber sub2 = em.merge(sub);
 		Song song2 = em.merge(song);
@@ -63,6 +65,22 @@ public class BeanifyBean implements Beanify{
 	public List<Subscriber> getSubscribers() {
 		
 		return em.createQuery("SELECT sub FROM Subscriber sub").getResultList();
+	}
+
+
+	@Override
+	public List<Album> loadArtistAlbums(Artist artist) {
+		Artist artist2 = em.merge(artist);
+		artist2.getAlbums();
+		return em.createQuery("FROM Album al Where artist_id =: artid").setParameter("artid", artist2.getId()).getResultList();
+	}
+
+
+	@Override
+	public void removeLikedSongToSubscriber(Subscriber sub, Song song) {
+		Subscriber sub2 = em.merge(sub);
+		Song song2 = em.merge(song);
+		sub2.deleteLikedSong(song2);	
 	}
 	
 }
