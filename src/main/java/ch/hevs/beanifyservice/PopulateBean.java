@@ -13,12 +13,14 @@ import ch.hevs.businessobject.Subscriber;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 
 @Stateless
 public class PopulateBean implements Populate{
 
 	@Override
+	@RolesAllowed(value = {"admin"})
 	public String populate() {
 		EntityTransaction tx = null;
 		try {
