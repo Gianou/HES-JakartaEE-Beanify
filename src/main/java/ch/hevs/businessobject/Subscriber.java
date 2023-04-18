@@ -55,6 +55,17 @@ public class Subscriber extends Person{
 		super();
 		likedSongs = new HashSet<Song>();
 	}
+
+	
+	@Override
+	public String toString() {
+		String result = getFirstName();
+		result += " ";
+		result += getLastName();
+		return result;
+	}
+	
+	
 	
 
 }

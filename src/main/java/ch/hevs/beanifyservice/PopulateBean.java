@@ -29,6 +29,7 @@ public class PopulateBean implements Populate{
 			
 			// Subscribers
 			Subscriber c = new Subscriber("name.surname@domain.com", "David", "Gianadda");
+			Subscriber d = new Subscriber("name2.surname@domain.com", "Anthony", "Le Meillour");
 			
 			// Artists
 			Artist a = new Artist("Perturbator", "James", "Kent");
@@ -96,6 +97,7 @@ public class PopulateBean implements Populate{
 			em.persist(a);
 			em.persist(b);
 			em.persist(c);
+			em.persist(d);
 			em.persist(al1);
 			em.persist(al2);
 			em.persist(al3);

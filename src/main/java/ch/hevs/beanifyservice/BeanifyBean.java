@@ -32,8 +32,8 @@ public class BeanifyBean implements Beanify{
 	}
 
 	@Override
-	public Subscriber getSubscriberByEmail(String email) {
-		return (Subscriber) em.createQuery("From Subscriber s WHERE s.email =: email").setParameter("email", email).getSingleResult();
+	public Subscriber getSubscriberByEmail(Long id) {
+		return (Subscriber) em.createQuery("From Subscriber s WHERE s.id =: id").setParameter("id", id).getSingleResult();
 		
 	}
 
@@ -52,6 +52,12 @@ public class BeanifyBean implements Beanify{
 	@Override
 	public List<Song> getSubscriberLikedSongs(Subscriber sub) {
 		return em.createQuery("From Subscriber_Song").getResultList();
+	}
+
+	@Override
+	public List<Subscriber> getSubscribers() {
+		
+		return em.createQuery("SELECT sub FROM Subscriber sub").getResultList();
 	}
 	
 }

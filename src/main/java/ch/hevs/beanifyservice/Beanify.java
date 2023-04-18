@@ -14,8 +14,12 @@ public interface Beanify {
 
 	Artist getArtist(String artistName);
 	List<Artist> getArtists();
-	Subscriber getSubscriberByEmail(String email);
+	
+	Subscriber getSubscriberByEmail(Long id);
+	List<Subscriber> getSubscribers();
+	
 	Song getSongById(Long id);
 	void addLikedSongToSubscriber(Subscriber sub, Song song);
-	List<Song>getSubscriberLikedSongs(Subscriber sub); 
+	
+	List<Song>getSubscriberLikedSongs(Subscriber sub);
 }
