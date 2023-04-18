@@ -56,14 +56,18 @@ public class ArtistBean
 		
 		// TO DO Check if test works
 		//Subscriber sub = beanify.getSubscriberByEmail("name.surname@domain.com");
-		selectedSubscriber  = beanify.getSubscriberByID(selectedSubscriberId);
+		selectedSubscriber = beanify.getSubscriberByID(selectedSubscriberId);
+		List <Long> alreadyLiked = new ArrayList<Long>();
+		alreadyLiked = beanify.getSubscriberLikedSongs(selectedSubscriber);
 		
-		if(selectedSubscriber.getLikedSongs().contains(likedSong.getId())) {
-		//if(true) {
+		if(alreadyLiked.contains(likedSong.getId())) {
 			System.out.println("Retourne chez toi");
 			return;
 		}
 		else {
+			for (Long s : alreadyLiked) {
+				System.out.println(s + "\r\n");
+			}
 			beanify.addLikedSongToSubscriber(selectedSubscriber, likedSong);
 		}
 		

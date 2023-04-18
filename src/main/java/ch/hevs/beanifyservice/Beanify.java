@@ -21,5 +21,5 @@ public interface Beanify {
 	Song getSongById(Long id);
 	void addLikedSongToSubscriber(Subscriber sub, Song song);
 	
-	List<Song>getSubscriberLikedSongs(Subscriber sub);
+	List<Long>getSubscriberLikedSongs(Subscriber sub);
 }

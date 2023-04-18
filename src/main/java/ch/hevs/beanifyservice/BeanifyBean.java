@@ -52,8 +52,11 @@ public class BeanifyBean implements Beanify{
 	}
 
 	@Override
-	public List<Song> getSubscriberLikedSongs(Subscriber sub) {
-		return em.createQuery("From Subscriber_Song").getResultList();
+	public List<Long> getSubscriberLikedSongs(Subscriber sub) {
+		Subscriber sub2 = em.merge(sub);
+		Long subID = sub2.getId();
+		
+		return em.createQuery("SELECT so.id FROM Subscriber s JOIN s.likedSongs so WHERE s.id =: subconnected").setParameter("subconnected", sub.getId()).getResultList();
 	}
 
 	@Override
