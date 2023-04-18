@@ -28,9 +28,6 @@ public class Song {
 	@Column(name="url")
 	private String url;
 	
-	@ManyToOne
-	private Album album;
-	
 	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<Artist> artists;
 	
@@ -81,16 +78,6 @@ public class Song {
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-
-	public Album getAlbum() {
-		return album;
-	}
-
-
-	public void setAlbum(Album album) {
-		this.album = album;
 	}
 
 

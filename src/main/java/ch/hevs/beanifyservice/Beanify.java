@@ -16,6 +16,7 @@ public interface Beanify {
 	List<Artist> getArtists();
 	
 	List<Album> loadArtistAlbums(Artist artist);
+	List<Song> loadLikedSongs(Subscriber sub);
 	
 	Song getSongById(Long id);
 	

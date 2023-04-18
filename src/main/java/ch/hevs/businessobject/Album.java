@@ -31,11 +31,11 @@ public class Album {
 	@ManyToOne
 	private Artist artist;
 	
-	@OneToMany(mappedBy = "album", cascade = CascadeType.ALL, fetch = FetchType.EAGER) //Eager required to display the song with Album.songs in the view
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) //Eager required to display the song with Album.songs in the view
 	private List<Song> songs;
 	
 	public void addSong(Song song) {
-		song.setAlbum(this);
+		//song.setAlbum(this);
 		this.songs.add(song);
 	}
 

@@ -47,14 +47,14 @@
         </h:form> 
         
         <h:form>
-        	<h:commandButton action="#{artistBean.reloadSubscriber}" value="Change Sub" />
+        	<h:commandButton action="#{artistBean.reloadSubscriber(true)}" value="Change Sub" />
         </h:form>
         
     </div>
     
     	<h2>Liked Songs</h2>
     	
-    	<h:dataTable value = "#{artistBean.selectedSubscriber.likedSongs}" var = "song">
+    	<h:dataTable value = "#{artistBean.likedSongs}" var = "song">
 		   <h:column>    				
 		      <f:facet name = "header"></f:facet>                    
               <p>#{song.songTitle}</p>

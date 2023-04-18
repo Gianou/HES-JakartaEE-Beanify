@@ -19,7 +19,7 @@ public class Subscriber extends Person{
 	@Column(name="email")
 	private String email;
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
 	private List<Song> likedSongs;
 		
 	//Helper method

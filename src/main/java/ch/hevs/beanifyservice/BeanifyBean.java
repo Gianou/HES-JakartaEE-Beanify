@@ -82,5 +82,12 @@ public class BeanifyBean implements Beanify{
 		Song song2 = em.merge(song);
 		sub2.deleteLikedSong(song2);	
 	}
+
+	@Override
+	public List<Song> loadLikedSongs(Subscriber sub) {
+		Subscriber sub2 = em.merge(sub);
+		
+		return em.createQuery("SELECT so FROM Subscriber s JOIN s.likedSongs so WHERE s.id =: subconnected").setParameter("subconnected", sub.getId()).getResultList();
+	}
 	
 }

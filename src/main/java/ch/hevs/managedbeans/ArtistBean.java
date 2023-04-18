@@ -28,11 +28,9 @@ public class ArtistBean
 	private Subscriber selectedSubscriber;
 	private Long selectedSubscriberId;
 	
+	private List<Song> likedSongs;
+	
 	private List<Album> albums;
-
-	
-
-	
 
 	@PostConstruct
     public void initialize(){
@@ -78,11 +76,16 @@ public class ArtistBean
 		Song likedSong = beanify.getSongById(id);
 		selectedSubscriber = beanify.getSubscriberByID(selectedSubscriberId);
 		beanify.removeLikedSongToSubscriber(selectedSubscriber, likedSong);
+		likedSongs = beanify.loadLikedSongs(selectedSubscriber);
 	}
 	
 	
-	public void reloadSubscriber() {
+	public void reloadSubscriber(boolean mustLoadLikedSong) {
 		selectedSubscriber  = beanify.getSubscriberByID(selectedSubscriberId);
+		if(mustLoadLikedSong) {
+			likedSongs = beanify.loadLikedSongs(selectedSubscriber);
+		}
+		
 	}
     
 	
@@ -91,6 +94,12 @@ public class ArtistBean
 		selectedArtist = beanify.getArtistByID(selectedArtistId);
 		albums = beanify.loadArtistAlbums(selectedArtist);
 		return "showAlbums";
+	}
+
+	public String myLikedSongs() {
+		selectedSubscriber  = beanify.getSubscriberByID(selectedSubscriberId);
+		likedSongs = beanify.loadLikedSongs(selectedSubscriber);
+		return "showLikedSongs";
 	}
 	
 	// Getter and Setter
@@ -126,11 +135,6 @@ public class ArtistBean
 		this.selectedArtist = selectedArtist;
 	}
 
-	public String myLikedSongs() {
-		// without "reloading" the currentSubscriber via the bean, the subscriber's list of song is not updated in the entity
-		//currentSubscriber = beanify.getSubscriberByEmail("name.surname@domain.com");
-		return "showLikedSongs";
-	}
 	
 	public Long getSelectedSubscriberId() {
 		return selectedSubscriberId;
@@ -162,6 +166,14 @@ public class ArtistBean
 
 	public void setAlbums(List<Album> albums) {
 		this.albums = albums;
+	}
+
+	public List<Song> getLikedSongs() {
+		return likedSongs;
+	}
+
+	public void setLikedSongs(List<Song> likedSongs) {
+		this.likedSongs = likedSongs;
 	}
 
 }
