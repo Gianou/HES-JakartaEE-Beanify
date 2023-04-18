@@ -1,14 +1,12 @@
 package ch.hevs.managedbeans;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.PostConstruct;
+import javax.annotation.ManagedBean;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import ch.hevs.beanifyservice.Populate;
 
+@ManagedBean
 public class WelcomeBean
 {
 	private Populate populate;
@@ -17,11 +15,7 @@ public class WelcomeBean
 		try {
     	InitialContext ctx = new InitialContext();
 		populate = (Populate) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/PopulateBean!ch.hevs.beanifyservice.Populate");
-		
-		populate.populate();
-
-		System.out.println("Database populated");
-			
+		populate.populate();			
 		}catch(NamingException e) {
 			e.printStackTrace();
 		}

@@ -17,10 +17,10 @@ import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 
 @Stateless
+@RolesAllowed(value = {"admin"})
 public class PopulateBean implements Populate{
 
 	@Override
-	@RolesAllowed(value = {"admin"})
 	public String populate() {
 		EntityTransaction tx = null;
 		try {

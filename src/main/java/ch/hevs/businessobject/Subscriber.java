@@ -18,10 +18,10 @@ import javax.persistence.Table;
 public class Subscriber extends Person{
 	
 
-	@Column(name="email")
+	@Column(name="email", unique=true)
 	private String email;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Song> likedSongs;
 		
 	//Helper method

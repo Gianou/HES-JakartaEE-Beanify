@@ -3,19 +3,18 @@ package ch.hevs.managedbeans;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
-import javax.ejb.TransactionAttribute;
-import javax.ejb.TransactionAttributeType;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import ch.hevs.beanifyservice.Beanify;
-import ch.hevs.beanifyservice.BeanifyBean;
 import ch.hevs.businessobject.Album;
 import ch.hevs.businessobject.Artist;
 import ch.hevs.businessobject.Song;
 import ch.hevs.businessobject.Subscriber;
 
+@ManagedBean
 public class ArtistBean
 {
 	private Beanify beanify;
@@ -35,9 +34,6 @@ public class ArtistBean
 	@PostConstruct
     public void initialize(){
 		try {
-			System.out.println("####################");
-			System.out.println("####################");
-			System.out.println("####################");
 	    	InitialContext ctx = new InitialContext();
 			beanify = (Beanify) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/BeanifyBean!ch.hevs.beanifyservice.Beanify");
 				
@@ -48,9 +44,6 @@ public class ArtistBean
 	    	// GET ARTISTS and set a default value
 			artists = beanify.getArtists();
 			selectedArtistId = artists.get(0).getId();
-			System.out.println("####################");
-			System.out.println("####################");
-			System.out.println("####################");
 		
 		}catch(NamingException e) {
 			e.printStackTrace();

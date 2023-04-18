@@ -28,7 +28,7 @@ public class Song {
 	@Column(name="url")
 	private String url;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // always want to know the artists when we get a song and there is usually 1 or 2 artist per song
 	private Set<Artist> artists;
 	
 	//Helper method

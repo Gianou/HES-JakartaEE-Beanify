@@ -47,14 +47,12 @@ public class Artist extends Person {
 		super(firstName, lastName);
 		this.artistName = artistName;
 		albums = new ArrayList<Album>();
-		
 	}
 	
 	public Artist()
 	{
 		super();
 		albums = new ArrayList<Album>();
-		
 	}
 	
 }

@@ -12,18 +12,18 @@ import ch.hevs.businessobject.Subscriber;
 @Local
 public interface Beanify {
 
-	Artist getArtistByID(Long id);
-	List<Artist> getArtists();
+	public Artist getArtistByID(Long id);
+	public List<Artist> getArtists();
 	
-	List<Album> loadArtistAlbums(Artist artist);
-	List<Song> loadLikedSongs(Subscriber sub);
+	public List<Album> loadArtistAlbums(Artist artist);
+	public List<Song> loadLikedSongs(Subscriber sub);
 	
-	Song getSongById(Long id);
+	public Song getSongById(Long id);
 	
-	Subscriber getSubscriberByID(Long id);
-	List<Subscriber> getSubscribers();
+	public Subscriber getSubscriberByID(Long id);
+	public List<Subscriber> getSubscribers();
 	
-	void addLikedSongToSubscriber(Subscriber sub, Song song);
-	void removeLikedSongToSubscriber(Subscriber sub, Song song);
-	List<Long>getSubscriberLikedSongs(Subscriber sub);
+	public void addLikedSongToSubscriber(Subscriber sub, Song song);
+	public void removeLikedSongToSubscriber(Subscriber sub, Song song);
+	public List<Long>getSubscriberLikedSongs(Subscriber sub);
 }
