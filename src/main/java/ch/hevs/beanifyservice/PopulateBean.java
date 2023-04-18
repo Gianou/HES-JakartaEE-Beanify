@@ -30,8 +30,11 @@ public class PopulateBean implements Populate{
 			// Subscribers
 			Subscriber c = new Subscriber("name.surname@domain.com", "David", "Gianadda");
 			
-			// PERTURBATOR
+			// Artists
 			Artist a = new Artist("Perturbator", "James", "Kent");
+			Artist b = new Artist("Carpenter Brut", "Franck", "Hueso");
+			
+			// PERTURBATOR
 			Album al1 = new Album("Dangerous Days", "17-06-2014");
 			List<Song> al1songs = new ArrayList<Song>();
 			al1songs.add(new Song("Welcome Back", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
@@ -44,7 +47,11 @@ public class PopulateBean implements Populate{
 			al1songs.add(new Song("Humans Are Such Easy Prey", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Minuit", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Satanic Rites", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-			al1songs.add(new Song("Complete Domination (feat. Carpenter Brut)", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			
+			Song featCarpenter = new Song("Complete Domination", "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+			featCarpenter.addArtist(b);
+			al1songs.add(featCarpenter);
+			
 			al1songs.add(new Song("Last Kiss", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			al1songs.add(new Song("Dangerous Days", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
 			for (Song song : al1songs) {
@@ -68,7 +75,7 @@ public class PopulateBean implements Populate{
 			a.addAlbum(al2);
 			
 			// CARPENTER BRUT
-			Artist b = new Artist("Carpenter Brut", "Franck", "Hueso");
+			
 			Album al3 = new Album("Leather Teeth", "23-02-2018");
 			List<Song> al3songs = new ArrayList<Song>();
 			al3songs.add(new Song("Leather Teeth", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));

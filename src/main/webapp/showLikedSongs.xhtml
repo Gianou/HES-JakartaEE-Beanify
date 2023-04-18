@@ -28,13 +28,27 @@
      			></h:commandButton>
         </h:form> 
     </div>
-    	
+    
+    	<h2>Liked Songs</h2>
     	
     	<h:dataTable value = "#{artistBean.currentSubscriber.likedSongs}" var = "song">
 		   <h:column>    				
-		      <f:facet name = "header">Your Liked Songs</f:facet>                    
-              #{song.songTitle}
+		      <f:facet name = "header"></f:facet>                    
+              <p>#{song.songTitle}</p>
+
+		<h:column>
+	
+				<h:dataTable value = "#{song.artists}" var = "artist">
+				   <h:column >    				
+				      <f:facet name = "header" ></f:facet>                    
+		              <p style="font-size:12px;">#{artist.artistName}</p>
+				   </h:column>
+				</h:dataTable>
+	
 		   </h:column>
+			</h:column>
+			
+			
 		</h:dataTable>
 		
 		
