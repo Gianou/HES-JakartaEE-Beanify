@@ -12,10 +12,10 @@ import ch.hevs.businessobject.Subscriber;
 @Local
 public interface Beanify {
 
-	Artist getArtist(String artistName);
+	Artist getArtistByID(Long id);
 	List<Artist> getArtists();
 	
-	Subscriber getSubscriberByEmail(Long id);
+	Subscriber getSubscriberByID(Long id);
 	List<Subscriber> getSubscribers();
 	
 	Song getSongById(Long id);

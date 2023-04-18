@@ -28,10 +28,33 @@
      			></h:commandButton>
         </h:form> 
     </div>
+    <div>
+    	<h:form 
+    		style="display: flex;
+    		flex-direction:column;
+        	align-items: center;
+        	justify-content: center;
+        	">
+        	
+        	<h:outputLabel >
+        		<h3>Subscriber</h3>
+        		<p>#{artistBean.selectedSubscriber}</p>
+        	</h:outputLabel>
+	        	<h:selectOneMenu  value="#{artistBean.selectedSubscriberId}" onchange="submit()">
+	        		<f:selectItems value="#{artistBean.subscribers}" var="sub"
+	        		itemValue="#{sub.id}" itemLabel="#{sub}" />
+	        	</h:selectOneMenu>
+        </h:form> 
+        
+        <h:form>
+        	<h:commandButton action="#{artistBean.reloadSubscriber}" value="Change Sub" />
+        </h:form>
+        
+    </div>
     
     	<h2>Liked Songs</h2>
     	
-    	<h:dataTable value = "#{artistBean.currentSubscriber.likedSongs}" var = "song">
+    	<h:dataTable value = "#{artistBean.selectedSubscriber.likedSongs}" var = "song">
 		   <h:column>    				
 		      <f:facet name = "header"></f:facet>                    
               <p>#{song.songTitle}</p>

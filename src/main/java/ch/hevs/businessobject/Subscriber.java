@@ -1,7 +1,7 @@
 package ch.hevs.businessobject;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -19,7 +19,7 @@ public class Subscriber extends Person{
 	private String email;
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	private Set<Song> likedSongs;
+	private List<Song> likedSongs;
 		
 	//Helper method
 		public void addLikedSong(Song song) {
@@ -35,11 +35,11 @@ public class Subscriber extends Person{
 		this.email = email;
 	}
 	
-	public Set<Song> getLikedSongs() {
+	public List<Song> getLikedSongs() {
 		return likedSongs;
 	}
 
-	public void setLikedSongs(Set<Song> likedSongs) {
+	public void setLikedSongs(List<Song> likedSongs) {
 		this.likedSongs = likedSongs;
 	}
 
@@ -47,13 +47,13 @@ public class Subscriber extends Person{
 	public Subscriber(String email, String firstName, String lastName) {
 		super(firstName, lastName);
 		this.email = email;
-		likedSongs = new HashSet<Song>();
+		likedSongs = new ArrayList <Song>();
 	}
 	
 	public Subscriber()
 	{
 		super();
-		likedSongs = new HashSet<Song>();
+		likedSongs = new ArrayList <Song>();
 	}
 
 	

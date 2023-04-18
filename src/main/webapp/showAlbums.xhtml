@@ -30,7 +30,7 @@
            
     </div>
     <div>
-    <h:form 
+    	<h:form 
     		style="display: flex;
     		flex-direction:column;
         	align-items: center;
@@ -40,16 +40,19 @@
         	<h:outputLabel >
         		<h3>Subscriber</h3>
         		<p>#{artistBean.selectedSubscriber}</p>
-        		<p>aaaaaaaa</p>
-        		<br></br>
         	</h:outputLabel>
-	        	<h:selectOneMenu  value="#{artistBean.selectedSubscriberId}" onchange="submit()" 
-	        	>
+	        	<h:selectOneMenu  value="#{artistBean.selectedSubscriberId}" onchange="submit()">
 	        		<f:selectItems value="#{artistBean.subscribers}" var="sub"
 	        		itemValue="#{sub.id}" itemLabel="#{sub}" />
 	        	</h:selectOneMenu>
         </h:form> 
+        
+        <h:form>
+        	<h:commandButton action="#{artistBean.reloadSubscriber}" value="Change Sub" />
+        </h:form>
+        
     </div>
+    
     	<h:outputLabel>
     		<h1>#{artistBean.selectedArtist.artistName}</h1>
     	</h:outputLabel>
@@ -73,7 +76,6 @@
 					<h:column>
 						<h:form>
 						  <h:commandButton value="#{song.id}" action="#{artistBean.addToSubLikedSong(song.id)}"/>
-						
 						</h:form>
 					</h:column>
 					

@@ -18,20 +18,15 @@ import ch.hevs.businessobject.Subscriber;
 
 public class ArtistBean
 {
-	private List<Artist> artists;
-	private List<String> artistNames;
 	private Beanify beanify;
 	
-	private String selectedArtistName;
+	private List<Artist> artists;
 	private Artist selectedArtist;
-	 
+	private Long selectedArtistId;
+	 	
 	private List<Subscriber> subscribers;
-	private List<String> subscriberNames;
-	private String selectedSubscriberName;
 	private Subscriber selectedSubscriber;
 	private Long selectedSubscriberId;
-	
-	private Subscriber currentSubscriber;
 
 	
 
@@ -41,27 +36,15 @@ public class ArtistBean
 	    	InitialContext ctx = new InitialContext();
 			beanify = (Beanify) ctx.lookup("java:global/Beanify-0.0.1-SNAPSHOT/BeanifyBean!ch.hevs.beanifyservice.Beanify");
 				
-			// get subscriber
-			//selectedSubscriber = beanify.getSubscriberByEmail("name.surname@domain.com");
-			
+			// GET SUBSCRIBERS
 			subscribers = beanify.getSubscribers();
-			/*
-			selectedSubscriberName = subscribers.get(0).getFirstName(); // Default value
-			subscriberNames = new ArrayList<String>();
-			for(Subscriber sub : subscribers) {
-				subscriberNames.add(sub.getFirstName());
-				System.out.println("Test");
-			}
-			*/
+			// Default Value
+			selectedSubscriberId = subscribers.get(0).getId();
 			
-	    	// get artists and set first as default
+	    	// GET ARTISTS
 			artists = beanify.getArtists();
-			// TO DO Check this
-			selectedArtistName = artists.get(0).getArtistName(); // Default value
-			this.artistNames = new ArrayList<String>();
-			for (Artist artist : artists) {
-				this.artistNames.add(artist.getArtistName());
-			}
+			// Default value
+			selectedArtistId = artists.get(0).getId();
 		
 		}catch(NamingException e) {
 			e.printStackTrace();
@@ -73,7 +56,7 @@ public class ArtistBean
 		
 		// TO DO Check if test works
 		//Subscriber sub = beanify.getSubscriberByEmail("name.surname@domain.com");
-		selectedSubscriber  = beanify.getSubscriberByEmail(selectedSubscriberId);
+		selectedSubscriber  = beanify.getSubscriberByID(selectedSubscriberId);
 		
 		if(selectedSubscriber.getLikedSongs().contains(likedSong.getId())) {
 		//if(true) {
@@ -85,10 +68,14 @@ public class ArtistBean
 		}
 		
 	}
+	
+	public void reloadSubscriber() {
+		selectedSubscriber  = beanify.getSubscriberByID(selectedSubscriberId);
+	}
     
-	// Method called when button clicked
+	
 	public String selectArtist() {
-		setSelectedArtist(beanify.getArtist(selectedArtistName)); // Is there a way to get the Artist rather then the ArtistName?
+		selectedArtist = beanify.getArtistByID(selectedArtistId); 
 		return "showAlbums";
 	}
 	
@@ -101,14 +88,6 @@ public class ArtistBean
 		this.artists = artists;
 	}
 
-	public List<String> getArtistNames() {
-		return artistNames;
-	}
-
-	public void setArtistNames(List<String> artistNames) {
-		this.artistNames = artistNames;
-	}
-
 	public Beanify getBeanify() {
 		return beanify;
 	}
@@ -117,13 +96,12 @@ public class ArtistBean
 		this.beanify = beanify;
 	}
 
-	public String getSelectedArtistName() {
-		return selectedArtistName;
+	public Long getSelectedArtistId() {
+		return selectedArtistId;
 	}
 
-	public void setSelectedArtistName(String selectedArtistName) {
-		System.out.println("Ca change d'artiste");
-		this.selectedArtistName = selectedArtistName;
+	public void setSelectedArtistId(Long selectedArtistId) {
+		this.selectedArtistId = selectedArtistId;
 	}
 
 	public Artist getSelectedArtist() {
@@ -148,36 +126,12 @@ public class ArtistBean
 		this.selectedSubscriberId = selectedSubscriberId;
 	}
 
-	public Subscriber getCurrentSubscriber() {
-		return currentSubscriber;
-	}
-
-	public void setCurrentSubscriber(Subscriber currentSubscriber) {
-		this.currentSubscriber = currentSubscriber;
-	}
-
 	public List<Subscriber> getSubscribers() {
 		return subscribers;
 	}
 
 	public void setSubscribers(List<Subscriber> subscribers) {
 		this.subscribers = subscribers;
-	}
-
-	public List<String> getSubscriberNames() {
-		return subscriberNames;
-	}
-
-	public void setSubscriberNames(List<String> subscriberNames) {
-		this.subscriberNames = subscriberNames;
-	}
-
-	public String getSelectedSubscriberName() {
-		return selectedSubscriberName;
-	}
-
-	public void setSelectedSubscriberName(String selectedSubscriberName) {
-		this.selectedSubscriberName = selectedSubscriberName;
 	}
 
 	public Subscriber getSelectedSubscriber() {

@@ -22,17 +22,19 @@ public class BeanifyBean implements Beanify{
 	@PersistenceContext(name = "BeanifyPU", type=PersistenceContextType.TRANSACTION)
 	private EntityManager em;
 
-	public Artist getArtist(String artistName) {
+	public Artist getArtistByID(Long id) {
 		
-		return (Artist) em.createQuery("From Artist a WHERE a.artistName =: artistName").setParameter("artistName", artistName).getSingleResult();
+		return (Artist) em.createQuery("From Artist a WHERE a.id =: id")
+				.setParameter("id", id).getSingleResult();
 	}
 
+	
 	public List<Artist> getArtists() {
 		return em.createQuery("SELECT a FROM Artist a").getResultList();
 	}
 
 	@Override
-	public Subscriber getSubscriberByEmail(Long id) {
+	public Subscriber getSubscriberByID(Long id) {
 		return (Subscriber) em.createQuery("From Subscriber s WHERE s.id =: id").setParameter("id", id).getSingleResult();
 		
 	}

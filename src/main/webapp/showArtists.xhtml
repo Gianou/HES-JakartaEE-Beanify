@@ -40,9 +40,9 @@
         		<h2>Choose an Artist</h2>
         		<br></br>
         	</h:outputLabel>
-	        	<h:selectOneMenu  value="#{artistBean.selectedArtistName}" onchange="submit()" 
-	        	>
-	        		<f:selectItems value="#{artistBean.artistNames}"/>
+	        	<h:selectOneMenu  value="#{artistBean.selectedArtistId}" onchange="submit()">
+	        		<f:selectItems value="#{artistBean.artists}" var="artist"
+	        		itemValue="#{artist.id}" itemLabel="#{artist.artistName}" />
 	        	</h:selectOneMenu>
         </h:form> 
         
