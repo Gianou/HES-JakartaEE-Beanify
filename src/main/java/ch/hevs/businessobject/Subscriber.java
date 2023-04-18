@@ -3,6 +3,8 @@ package ch.hevs.businessobject;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,13 +25,16 @@ public class Subscriber extends Person{
 	private List<Song> likedSongs;
 		
 	//Helper method
+	@TransactionAttribute(value = TransactionAttributeType.MANDATORY)
 	public void addLikedSong(Song song) {
 		this.likedSongs.add(song);
 	}
 	
+	@TransactionAttribute(value = TransactionAttributeType.MANDATORY)
 	public void deleteLikedSong(Song song) {
 		this.likedSongs.remove(song);
 	}
+	
 	
 	// GETTER SETTER
 	public String getEmail() {

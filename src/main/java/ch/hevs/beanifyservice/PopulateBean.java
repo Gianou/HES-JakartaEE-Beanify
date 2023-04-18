@@ -110,9 +110,13 @@ public class PopulateBean implements Populate{
 			em.persist(al3);
 			tx.commit();
 			
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
 		
 		return "showArtists";	
 	}

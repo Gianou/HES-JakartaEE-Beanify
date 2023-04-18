@@ -93,6 +93,7 @@ public class ArtistBean
 		//Fetch the albums
 		selectedArtist = beanify.getArtistByID(selectedArtistId);
 		albums = beanify.loadArtistAlbums(selectedArtist);
+		//albums = selectedArtist.getAlbums(); // Does not retrieve the albums
 		return "showAlbums";
 	}
 
